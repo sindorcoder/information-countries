@@ -1,5 +1,6 @@
 import "../../style/mainmin.css";
 import "../../style/globalmin.css"
+import "./mode"
 import data from "./data";
 const cards = document.querySelector(".cards");
 const search = document.querySelector(".header--search");

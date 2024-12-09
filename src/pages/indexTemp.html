@@ -3,22 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= htmlWebpackPlugin.options.title  %></title>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    />
   </head>
   <body>
+    <nav class="navigation">
+      <div class="nav">
+        <h1>Where in the world ?</h1>
+
+        <div class="header__theme">
+          <div class="switch">
+            <input
+              id="switch"
+              class="switch__input"
+              name="switch"
+              type="checkbox"
+            />
+            <label class="switch__label" for="switch"></label>
+          </div>
+        </div>
+      </div>
+    </nav>
     <header class="header">
       <div class="header__container">
         <form class="form">
           <input
-          type="text"
-          class="header--search"
-          placeholder="Search Country"
-        />
+            type="text"
+            class="header--search"
+            placeholder="Search Country"
+          />
         </form>
-        <div class="header__theme">
-          <button>Dark</butt>
-          <button>Light</button>
-        </div>
       </div>
     </header>
     <main class="main">
