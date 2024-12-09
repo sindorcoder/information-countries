@@ -2,16 +2,9 @@
   margin-bottom: 80px;
 }
 
-.container {
-  width: 100%;
-  margin: 0 auto;
-  max-width: 1440px;
-  padding-inline: 1.5rem;
-}
-
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 

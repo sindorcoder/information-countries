@@ -5,7 +5,8 @@ module.exports = {
     mode: "development",
     entry: {
         app: "./src/js/app.js",
-        about: "./src/js/about.js"
+        about: "./src/js/about.js",
+        search: "./src/js/search.js"
     },
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -23,6 +24,12 @@ module.exports = {
             template: "./src/pages/abouTemp.html",
             filename: "about.html",
             chunks: ["about"]
+        }),
+        new htmlWebpackPlugin({
+            title: "Search Countries",
+            template: "./src/pages/searchTeml.html",
+            filename: "search.html",
+            chunks: ["search"]
         })
     ],
     module: {

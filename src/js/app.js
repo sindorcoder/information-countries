@@ -3,7 +3,7 @@ import "../../style/globalmin.css"
 import data from "./data";
 const cards = document.querySelector(".cards");
 const search = document.querySelector(".header--search");
-
+const form = document.querySelector(".form")
 let searchInfo;
 
 const dataFilter = [];
@@ -19,7 +19,13 @@ search.addEventListener("input", (e) => {
   if (dataBase.length > 0) {
     dataFilter.push(...dataBase);
   }
+  
   renderCards(dataFilter.length > 0 ? dataFilter : data);
+});
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  window.location.href = `search.html?${search.value}`;
 });
 
 cards.addEventListener("click", (e) => {
@@ -32,12 +38,12 @@ cards.addEventListener("click", (e) => {
 });
 
 
-function renderCards(dataArray) {
+export function renderCards(dataArray) {
   cards.innerHTML = "";
   dataArray && dataArray.forEach((country) => {
     const card = document.createElement("div");
     card.classList.add("card");
-    card.innerHTML = `<div class="card__image"><img width="100%" data-id="${country.name.common}" src="${country.flags.png}" alt="${country.flags.alt}" class="card__img"></div>
+    card.innerHTML = `<div class="card__image"><img loading="lazy" width="100%" data-id="${country.name.common}" src="${country.flags.png}" alt="${country.flags.alt}" class="card__img"></div>
       <div class="card__info">
           <h3 class="card__title">${country.name.common}</h3>
           
